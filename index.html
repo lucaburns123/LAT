@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LAT ®</title>
+  <link href="style.css" href="https://pyscript.net/alpha/pyscript.css" rel="stylesheet" type="text/css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <div class="header">
+
+    <h1>LAT ®</h1>
+    <h2>Software used for making life easier, or idc.</h2>
+    <div class="clear"></div>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Tools')">Tools</button>
+    <button class="tablinks" onclick="openCity(event, 'Games')">Games</button>
+    <button class="tablinks" onclick="openCity(event, 'Resources')">Resources</button>
+    <button class="tablinks" onclick="openCity(event, 'C&T')">Copyright & Trademark</button>
+    <button class="tablinks" onclick="openCity(event, 'N&A')">Notice & Agreement</button>
+  </div>
+
+  <div id="Tools" class="tabcontent">
+    <h3>Tools</h3>
+    <a href="html files/idlebreakoutsavee.html"><button>Idle Breakout Save Editor</button></a>
+    <a href="html files/idlebreakoutsavee.html"><button>Clicker Heroes Save Editor</button></a>
+    <a href="html files/idlebreakoutsavee.html"><button>Chat-GPT (AI)</button></a>
+  </div>
+
+  <div id="Games" class="tabcontent">
+    <h3>Games</h3>
+    <a href="/html files/idlebreakout.html"><button>Idle Breakout</button></a>
+    <a href="/html files/brutalmania.html"><button>Brutal Mania</button></a>
+  </div>
+
+  <div id="Resources" class="tabcontent">
+    <h3>Resources</h3>
+    <p></p>
+  </div>
+
+  <div id="C&T" class="tabcontent">
+    <h3>Copyright & Trademark</h3>
+    <p>Software is intended for academic purposes.</p>
+    <h3>Luca Burns ™</h3>
+  </div>
+
+  <div id="N&A" class="tabcontent">
+    <h3>Notice & Agreement</h3>
+    <p>Website formally known & signed as "Luca's Advanced Tools ®.</p>
+    <h5>Information below is intended for unauthorized and
+    new users.</h5>
+    <a href="core html/notice.html"><button>Notice & Agreement</button></a>
+  </div>
+
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
+  <div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="expires" content="0">
+    <title>Clicker Heroes SaveEditor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+      <link rel="icon" href="/favicon.ico">
+      <link rel="manifest" href="/site.webmanifest">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	function decompress() {
+	$("#uncompress").prop("disabled",true);
+    jQuery.ajax ({
+        url: "decode_save_file.php",
+        type: "POST",
+        data: {savefile: document.getElementById("compressed_data").value},
+        dataType: "text",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        success: function(data, textStatus, jQxhr){
+            document.getElementById("uncompressed_data").value = data;
+			$('.nav-tabs a[href="#edit_file"]').tab('show');
+			$("#uncompress").prop("disabled",false);
+        },
+        statusCode: {
+            502: function() {
+                decompress();
+            }a
+        }
+    });
+}
+function compress() {
+	$("#compress").prop("disabled",true);
+    jQuery.ajax ({
+        url: "encode_save_file.php",
+        type: "POST",
+        data: {savefile: revertToNormal()},
+        dataType: "text",
+        success: function(data, textStatus, jQxhr){
+            document.getElementById("finished_save_file").value = data;
+			$('.nav-tabs a[href="#new_file"]').tab('show');
+			$("#compress").prop("disabled",false);
+        }
+    });
+}
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+function revertToNormal() {
+    var str = document.getElementById("uncompressed_data").value;
+    var testStr = replaceAll(str, "\n" , "");
+    var nextReplace = replaceAll(testStr, "  ", "");
+    return nextReplace;
+}
+
+(function($) {
+
+    'use strict';
+
+    $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
+        var $target = $(e.target);
+        var $tabs = $target.closest('.nav-tabs-responsive');
+        var $current = $target.closest('li');
+        var $parent = $current.closest('li.dropdown');
+        $current = $parent.length > 0 ? $parent : $current;
+        var $next = $current.next();
+        var $prev = $current.prev();
+        var updateDropdownMenu = function($el, position){
+            $el
+                .find('.dropdown-menu')
+                .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+                .addClass( 'pull-xs-' + position );
+        };
+
+        $tabs.find('>li').removeClass('next prev');
+        $prev.addClass('prev');
+        $next.addClass('next');
+
+        updateDropdownMenu( $prev, 'left' );
+        updateDropdownMenu( $current, 'center' );
+        updateDropdownMenu( $next, 'right' );
+    });
+
+})(jQuery);
+	</script>
+	<style>
+	textarea {
+    width:100%;
+    display:block;
+    max-width:100%;
+    line-height:1.5;
+    padding:15px 15px 30px;
+    border-radius:3px;
+    border:1px solid black
+    font:13px Tahoma, cursive;
+	height:50%;
+	min-height:400px
+}
+	</style>
+</head>
+<body>
+<div class="container">
+  <h2>Clicker Heroes Save File Editor</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#load_file">Load Save File</a></li>
+    <li><a data-toggle="tab" href="#edit_file">Edit Save File</a></li>
+    <li><a data-toggle="tab" href="#new_file">New Save File</a></li>
+    <li><a data-toggle="tab" href="#changelog">Changelog + Info</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="load_file" class="tab-pane fade in active">
+      <h3>Paste your Save File here: </h3>
+            <textarea id="compressed_data" class="compressed_data" name="compressed_data"></textarea> <br />
+            <input type="button"  onclick="decompress()" name="uncompress" id="uncompress" value="Load Savefile" />
+    </div>
+    <div id="edit_file" class="tab-pane fade">
+      <h3>Here you can edit your File: </h3>
+      <textarea id="uncompressed_data" class="uncompressed_data" name="uncompressed_data" ></textarea><br/>
+            <input type="button" onclick="compress()" name="compress" id="compress" value="save changes" />
+    </div>
+    <div id="new_file" class="tab-pane fade">
+      <h3>Your new Save File: </h3>
+	  
+      <textarea id="finished_save_file" class="finished_save_file" name="finished_save_file" ></textarea><br/>
+    </div>
+    <div id="changelog" class="tab-pane fade">
+      <h3>Information:</h3>
+              - if you have any suggestions then post it on the reddit thread -> <a href="https://www.reddit.com/r/ClickerHeroesHacks/comments/7hkju9/clicker_heroes_savefile_editor_webversion_out_now/" target="_blank"> Link </a> or write me a <a href="mailto:saveeditor@hd-gaming.eu" > Mail here </a><br/>
+        
+		<h3>Changelog:</h3>
+		<p>22.05.2018<br/>
+			- Design overhaul hope it´s fine now first time with bootstrap :)
+        <p>14.12.2017<br/>
+            - added small information that the new savefile is in the left box after pressing the save button.
+        <p>07.12.2017 #2<br/>
+            - Fixxed savefile saving not worked.</p>
+        <p>07.12.2017 <br/>
+            - changed how the savefile looks like ( its now more readable for humans ;)  <br/>
+            - changed design a litte bit for better readability i hope (i´m not good with design :P if you have a small and nice design and you want to see it here then mail me ;) ) <br/>
+            - changed many things you cant see. </p>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="mask">
+    <div class="colleft">
+        <div class="right_side">
+            <p>Here you can edit your Savefile:</p>
+            <textarea id="uncompressed_data" class="uncompressed_data" name="uncompressed_data" ></textarea><br/>
+            <input type="button" onclick="compress()" name="compress" id="compress" value="save Savefile" />
+            <p class="after_save_information" id="after_save_information">your new savefile is ready in the left box after saving.</p>
+        </div>
+        <div class="left_side">
+            <p>Paste your Savefile here:</p>
+            <textarea id="compressed_data" class="compressed_data" name="compressed_data"></textarea> <br />
+            <input type="button"  onclick="decompress()" name="uncompress" id="uncompress" value="Load Savefile" />
+            <p>There is no guarantee that it works. Please have a backup ready.</p>
+        </div>
+    </div>
+    <div class="footer">
+        - if you have any suggestions then post it on the reddit thread -> <a href="https://www.reddit.com/r/ClickerHeroesHacks/comments/7hkju9/clicker_heroes_savefile_editor_webversion_out_now/" target="_blank"> Link </a> or write me a <a href="mailto:saveeditor@hd-gaming.eu" > Mail here </a><br/>
+        <p><b>Changelog:</b></p>
+        <p>14.12.2017<br/>
+            - added small information that the new savefile is in the left box after pressing the save button.
+        <p>07.12.2017 #2<br/>
+            - Fixxed savefile saving not worked.</p>
+        <p>07.12.2017 <br/>
+            - changed how the savefile looks like ( its now more readable for humans ;)  <br/>
+            - changed design a litte bit for better readability i hope (i´m not good with design :P if you have a small and nice design and you want to see it here then mail me ;) ) <br/>
+            - changed many things you cant see. </p>
+    </div>
+
+</div>
+-->
+</body>
+</html>

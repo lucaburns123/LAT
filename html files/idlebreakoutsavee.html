@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="/style.css" href="https://pyscript.net/alpha/pyscript.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Idle Breakout Save Editor (ported to HTML by Luca Burns)</h1>
+      <h2>MAKE SURE POP-UPS ARE ENABLED</h2>
+      <h3>1. Level, 2. Coins, 3. Gold, 4. Black Boxes, 5. Skill Points</h3>
+
+    <py-script>
+      import base64
+      import time
+      
+      print("Loading...")
+      time.sleep(4)
+      print("Loaded!")
+      time.sleep(1)
+      time.sleep(3)
+      
+      level = input()
+      money = input()
+      gold = input()   
+      bb = input()
+      sp = input()
+
+      s = f"{level},{money},{gold},2,0,0,0,0,0,0,0,1,1,0,43595.78,999999,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{bb},0,0,0,1,{sp},1,0,0,Made By Luca"
+      b = s.encode("UTF-8")
+      e = base64.b64encode(b)
+
+      time.sleep(3)
+      print(e)
+    </py-script>
+
+      <a href="javascript:window.history.back();"><button>Back</button></a>
+
+      <a href="/index.html"><button>Home</button></a>
+
+      <div class="background">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+  </body>
+</html>
