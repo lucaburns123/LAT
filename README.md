@@ -18,6 +18,9 @@ An all-in-one tool designed for middle school-college students that struggle wit
 
 If you are deploying to an alternative service or to a server, try to deploy via [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Deploy-via-terminal) using this example.
 
+If you would like a preview of the website, click this [test link](https://1a892cc8-ba0e-4c3f-b0a9-f1165778612e-00-3k35msam57n9c.kirk.replit.dev/index.html?)
+
+
 Support & Updates may be found in our [Discord Server](discord.gg/unblock)
 > [!IMPORTANT]  
 > Until deployed on a domain with a valid SSL certificate, Firefox & other browsers that dont accept invalid SSL certificates; will not be able to load the site. Use chromium for testing on localhost.
