@@ -1,7 +1,7 @@
 <p align="center"><img src="https://github.com/lucaburns123/lat/blob/aa768a959dfe2d2f16af1cf2c109625693eab636/images/download.jpeg" height="200"></p>
 <h1 align="center">lat</h1>
 
-An all-in-one tool designed for middle school-college students that struggle with their school's web filters & restrictons. This software was designed in order to assist with academic assignments, tests, quizzes, or any other form of academic summative &/or formative material. This software is designed to be extremely easy to deploy or get started for beginners.
+An all-in-one tool designed for middle school-college students that struggle with their school's web filters & restrictons. This software was designed in order to assist with academic assignments, tests, quizzes, or any other form of academic summative &/or formative material. This software is designed to be extremely easy to deploy or to get started for beginners.
 
 ## Features
 - Constantly updating game-list, in which users can easily request games.
@@ -21,7 +21,6 @@ If you are deploying to an alternative service or to a server, try to deploy via
 If you would like a preview of the website, click this [test link](https://1a892cc8-ba0e-4c3f-b0a9-f1165778612e-00-3k35msam57n9c.kirk.replit.dev/index.html?)
 
 
-Support & Updates may be found in our [Discord Server](discord.gg/unblock)
 > [!IMPORTANT]  
 > Until deployed on a domain with a valid SSL certificate, Firefox & other browsers that dont accept invalid SSL certificates; will not be able to load the site. Use chromium for testing on localhost.
 
