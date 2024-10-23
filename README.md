@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/lucaburns123/lat/refs/heads/main/images/download.jpeg?token=GHSAT0AAAAAACYUW4A5R6WL2E4SV55XYZX2ZYZGTYA" height="200"></p>
+<p align="center"><img src="https://github.com/lucaburns123/lat/blob/aa768a959dfe2d2f16af1cf2c109625693eab636/images/download.jpeg" height="200"></p>
 <h1 align="center">lat (Luca's Advanced Tool's)</h1>
 
 An all-in-one tool designed for middle school-college students that struggle with their school's web filters & restrictons. This software was designed in order to assist with academic assignments, tests, quizzes, or any other form of academic summative &/or formative material.
