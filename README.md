@@ -16,7 +16,7 @@ An all-in-one mega-tool designed for middle school-college students that struggl
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://github.com/lucaburns123/Ultraviolet-App/wiki/Remix-on-Glitch)
 [![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://github.com/lucaburns123/Ultraviolet-App/wiki/Deploy-to-Koyeb)
 
-If you are deploying to an alternative service or to a server, try to deploy via [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Deploy-via-terminal) using this example.
+If you are deploying to an alternative service or to a server, try to deploy via [Deploy via terminal](https://github.com/lucaburns123/lat/wiki/Deploy-via-terminal) using this example.
 
 If you would like a preview of the website, click this [test link](https://1a892cc8-ba0e-4c3f-b0a9-f1165778612e-00-3k35msam57n9c.kirk.replit.dev/index.html?)
 
