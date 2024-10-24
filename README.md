@@ -4,7 +4,7 @@
 An all-in-one tool designed for middle school-college students that struggle with their school's web filters & restrictons. This software was designed in order to assist with academic assignments, tests, quizzes, or any other form of academic summative &/or formative material. This software is designed to be extremely easy to deploy or to get started for beginners.
 
 ## Features
-- Constantly updating game-list, in which users can easily request games.
+- Constantly updating game-list by user request, in which includes over 20+ popular titles.
 - Website un-blocker (Website Proxy).
 - Assisting Tools for Academics (Chat-GPT, Calculators, Information).
 - Tools for Games (Save-Editors, Game-Hacks, & other game needs).
